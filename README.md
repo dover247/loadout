@@ -15,7 +15,9 @@ chmod +x loadout
 ./loadout                      # install everything into /tools
 ./loadout -n                   # dry run: print actions, change nothing
 
-./loadout list                 # list every tool (name, kind, source, description)
+./loadout list                 # catalog: every tool that CAN be installed
+./loadout status               # inventory: what IS installed (kind, PATH health, location)
+./loadout status -v            # same, with versions (-s shows only shadowed tools)
 ./loadout install nxc nuclei   # install only the named tool(s), with their deps
 
 ./loadout help                 # full help, commands, examples
@@ -47,4 +49,5 @@ o365spray · cloud_enum · metaextract · username-anarchy ·
 ligolo-ng · xfreerdp3 · nuclei · httpx · naabu · dnsx · subfinder · katana ·
 urlfinder · mapcidr · pdtm · SecLists (optional).
 
-The `tools` command (installed by loadout) prints the live inventory at any time.
+`loadout status` prints the live inventory at any time — each tool's kind, where
+it resolves, and whether `/tools` wins on `$PATH` (`unified`) or is shadowed.
