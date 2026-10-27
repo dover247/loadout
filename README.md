@@ -34,10 +34,16 @@ accept aliases (`netexec`→`nxc`, `ligolo-ng`→`ligolo`, …).
 
 Useful flags: `--minimal` (skip the ProjectDiscovery suite), `--only a,b` /
 `--skip a,b` (pick sections), `--tools-dir <path>` (change install root),
-`--no-color` (plain output; also honors `NO_COLOR`), `--list` (list sections).
-Set `GITHUB_TOKEN` to lift the GitHub API rate limit. Output is colored on a
-terminal and plain when piped; the run log is written under
-`$XDG_STATE_HOME/loadout/` (default `~/.local/state/loadout/loadout.log`).
+`-V`/`--verbose` (stream child-command output), `--no-color` (plain output;
+also honors `NO_COLOR`), `--list` (list sections). Set `GITHUB_TOKEN` to lift
+the GitHub API rate limit.
+
+By default a run is quiet: it prints one status line per tool (installed /
+failed) rather than the raw apt/pipx/go/git chatter. Failures still show a short
+tail of the command's output so you know what broke, and the **full** output of
+every command always goes to the log file under `$XDG_STATE_HOME/loadout/`
+(default `~/.local/state/loadout/loadout.log`). Use `-V` to stream everything to
+the console. Output is colored on a terminal and plain when piped.
 
 ## Tools installed
 
