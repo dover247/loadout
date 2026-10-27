@@ -33,9 +33,11 @@ chmod +x loadout
 ./loadout --list     # list the sections (phases) and exit
 ```
 
-Run it **as your normal user, not root** — it calls `sudo` only where a step
-genuinely needs it (creating `/tools`, installing to `/usr/local/bin`,
-`/usr/bin`, `/usr/share`). When done, open a new shell (or `source ~/.bashrc`)
+Runs **either as root or as a normal user**. As a normal user it calls `sudo`
+only where a step needs it (creating `/tools`, installing to `/usr/local/bin`,
+`/usr/bin`, `/usr/share`), so that account needs sudo rights. As **root** it runs
+those steps directly — no `sudo` required or invoked (handy in root containers
+where `sudo` isn't installed). When done, open a new shell (or `source ~/.bashrc`)
 so the `/tools`-first `$PATH` takes effect.
 
 Set `GITHUB_TOKEN` in your environment to lift the anonymous GitHub API rate
