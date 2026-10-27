@@ -17,6 +17,9 @@ chmod +x loadout
 
 ./loadout list                 # list every tool (name, kind, source, description)
 ./loadout install nxc nuclei   # install only the named tool(s), with their deps
+
+./loadout help                 # full help, commands, examples
+./loadout --version            # version / build info
 ```
 
 Runs as **root** or as a normal user with **sudo** rights. When it finishes,
@@ -29,7 +32,10 @@ accept aliases (`netexec`→`nxc`, `ligolo-ng`→`ligolo`, …).
 
 Useful flags: `--minimal` (skip the ProjectDiscovery suite), `--only a,b` /
 `--skip a,b` (pick sections), `--tools-dir <path>` (change install root),
-`--list` (list sections). Set `GITHUB_TOKEN` to lift the GitHub API rate limit.
+`--no-color` (plain output; also honors `NO_COLOR`), `--list` (list sections).
+Set `GITHUB_TOKEN` to lift the GitHub API rate limit. Output is colored on a
+terminal and plain when piped; the run log is written under
+`$XDG_STATE_HOME/loadout/` (default `~/.local/state/loadout/loadout.log`).
 
 ## Tools installed
 
