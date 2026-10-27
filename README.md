@@ -40,10 +40,11 @@ terminal and plain when piped; the run log is written under
 ## Tools installed
 
 nmap · hashcat · john · sqlmap · ffuf · kerbrute · gitleaks · jwt_tool ·
-nxc (NetExec) · certipy · bloodyAD · impacket · krbrelayx · printerbug ·
-PKINITtools · pywhisker · bloodhound-python (CE) · mimikatz · pre2k · timeroast ·
-responder · pcredz · evil-winrm · manspider · o365spray · dehashapitool ·
-metaextract · username-anarchy · ligolo-ng · xfreerdp3 · nuclei · httpx · naabu ·
-dnsx · subfinder · katana · urlfinder · mapcidr · pdtm · SecLists (optional).
+testssl · wpscan · nxc (NetExec) · certipy · bloodyAD · impacket · krbrelayx ·
+printerbug · PKINITtools · pywhisker · bloodhound-python (CE) · bloodbash ·
+mimikatz · pre2k · timeroast · responder · pcredz · evil-winrm · manspider ·
+o365spray · cloud_enum · dehashapitool · metaextract · username-anarchy ·
+ligolo-ng · xfreerdp3 · nuclei · httpx · naabu · dnsx · subfinder · katana ·
+urlfinder · mapcidr · pdtm · SecLists (optional).
 
 The `tools` command (installed by loadout) prints the live inventory at any time.
