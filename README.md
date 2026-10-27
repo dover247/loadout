@@ -12,17 +12,24 @@ toolbox.
 
 ```bash
 chmod +x loadout
-./loadout            # install everything into /tools
-./loadout -n         # dry run: print actions, change nothing
-./loadout --list     # list sections and exit
+./loadout                      # install everything into /tools
+./loadout -n                   # dry run: print actions, change nothing
+
+./loadout list                 # list every tool (name, kind, source, description)
+./loadout install nxc nuclei   # install only the named tool(s), with their deps
 ```
 
 Runs as **root** or as a normal user with **sudo** rights. When it finishes,
 open a new shell (or `source ~/.bashrc`) so `/tools` takes effect on `$PATH`.
 
+**Pick specific tools:** `loadout list` shows everything available (filter with
+`--kind pipx`, or `--names` for a bare list); `loadout install <name…>` installs
+just those, pulling the base toolchain they need and skipping the rest. Names
+accept aliases (`netexec`→`nxc`, `ligolo-ng`→`ligolo`, …).
+
 Useful flags: `--minimal` (skip the ProjectDiscovery suite), `--only a,b` /
-`--skip a,b` (pick sections), `--tools-dir <path>` (change install root).
-Set `GITHUB_TOKEN` to lift the GitHub API rate limit for release downloads.
+`--skip a,b` (pick sections), `--tools-dir <path>` (change install root),
+`--list` (list sections). Set `GITHUB_TOKEN` to lift the GitHub API rate limit.
 
 ## Tools installed
 
