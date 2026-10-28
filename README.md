@@ -27,6 +27,11 @@ chmod +x loadout
 Runs as **root** or as a normal user with **sudo** rights. When it finishes,
 open a new shell (or `source ~/.bashrc`) so `/tools` takes effect on `$PATH`.
 
+`/tools` is kept as a flat **launcher surface** — only executables (binaries,
+symlinks, venv-backed wrappers). Tool **source** checkouts and their virtualenvs
+live separately under `~/.local/share/loadout/repos/` (override with
+`--repos-dir` or `LOADOUT_REPOS`), so the directory on your `$PATH` stays clean.
+
 **Pick specific tools:** `loadout list` shows everything available (filter with
 `--kind pipx`, or `--names` for a bare list); `loadout install <name…>` installs
 just those, pulling the base toolchain they need and skipping the rest. Names
@@ -34,9 +39,10 @@ accept aliases (`netexec`→`nxc`, `ligolo-ng`→`ligolo`, …).
 
 Useful flags: `--minimal` (skip the ProjectDiscovery suite), `--only a,b` /
 `--skip a,b` (pick sections), `--tools-dir <path>` (change install root),
-`-V`/`--verbose` (stream child-command output), `--no-color` (plain output;
-also honors `NO_COLOR`), `--list` (list sections). Set `GITHUB_TOKEN` to lift
-the GitHub API rate limit.
+`--repos-dir <path>` (where source repos are cloned; default
+`~/.local/share/loadout/repos`), `-V`/`--verbose` (stream child-command output),
+`--no-color` (plain output; also honors `NO_COLOR`), `--list` (list sections).
+Set `GITHUB_TOKEN` to lift the GitHub API rate limit.
 
 By default a run is quiet: it prints one status line per tool (installed /
 failed) rather than the raw apt/pipx/go/git chatter. Failures still show a short
